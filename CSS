@@ -1,9 +1,7 @@
-/* Global CSS qismi */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
     color: #333;
 }
 
@@ -58,6 +56,10 @@ footer {
     bottom: 0;
 }
 
+h2 {
+    text-align: center;
+}
+
 section {
     background-color: white;
     padding: 1em;
@@ -66,115 +68,27 @@ section {
     margin-bottom: 2em;
 }
 
-h2 {
+h3 {
     text-align: center;
 }
 
 ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
-ul li {
+li {
     margin-bottom: 0.5em;
 }
 
-/* Specific styles for different sections */
-
-/* Background image */
+/* Background image style */
 body {
     background-image: url('path/to/nature-background.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-position: center;
-}
-
-/* Mavzular section */
-#mavzular {
-    background-color: #fff;
-    padding: 2em;
-    margin-bottom: 2em;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-#mavzular h3 {
-    text-align: center;
-    color: #333;
-}
-
-#mavzular ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 1em;
-}
-
-#mavzular ul li {
-    margin-bottom: 0.5em;
-}
-
-/* Slaydlar section */
-#slaydlar {
-    background-color: #f9f9f9;
-    padding: 2em;
-    margin-bottom: 2em;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-#slaydlar h3 {
-    text-align: center;
-    color: #333;
-}
-
-#slaydlar ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 1em;
-}
-
-#slaydlar ul li {
-    margin-bottom: 0.5em;
-}
-
-/* Xaritalar section */
-#xaritalar {
-    background-color: #fff;
-    padding: 2em;
-    margin-bottom: 2em;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-#xaritalar h3 {
-    text-align: center;
-    color: #333;
-}
-
-#xaritalar .map {
-    text-align: center;
-    margin-top: 1em;
-}
-
-/* Videolar section */
-#videolar {
-    background-color: #f9f9f9;
-    padding: 2em;
-    margin-bottom: 2em;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-#videolar h3 {
-    text-align: center;
-    color: #333;
-}
-
-#videolar ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 1em;
-}
-
-#videolar ul li {
-    margin-bottom: 0.5em;
+    height: 100vh; /* Ensures background covers entire viewport height */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
