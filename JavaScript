@@ -1,0 +1,119 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const sinf = urlParams.get('sinf');
+
+    if (sinf) {
+        document.getElementById('sinf-title').innerText = `${sinf}-sinf Geografiyasi`;
+        
+        const content = document.getElementById('content');
+        content.innerHTML = ""; // Clear previous content
+        
+        const data = {
+            "6": {
+                "Mavzulari": [
+                    "Materiklar va Okeanlar",
+                    "Yerning Tabiiy Resurslari"
+                ],
+                "Xaritalar": [
+                    "<img src='images/world_map.jpg' alt='Dunyo xaritasi' />",
+                    "<img src='images/ocean_currents.jpg' alt='Okean oqimlari' />"
+                ],
+                "Slaydlar": [
+                    "<a href='slides/atmosfera.pdf'>Atmosfera sathlari</a>",
+                    "<a href='slides/geologik_davrlari.pdf'>Geologik davrlar</a>"
+                ],
+                "Videolar": [
+                    "<a href='https://www.youtube.com/watch?v=XXXXXXX'>Vulqon portlashlari</a>",
+                    "<a href='https://www.youtube.com/watch?v=XXXXXXX'>Iqlim o'zgarishi</a>"
+                ]
+            },
+            "7": {
+                "Mavzulari": [
+                    "Yerning Harakati",
+                    "Geografik Koordinatalar"
+                ],
+                "Xaritalar": [
+                    "<img src='images/geographic_coordinates.jpg' alt='Geografik koordinatalar xaritasi' />"
+                ],
+                "Slaydlar": [
+                    "<a href='slides/yer_harakati.pdf'>Yerning harakati</a>",
+                    "<a href='slides/geografik_koordinatalar.pdf'>Geografik koordinatalar</a>"
+                ],
+                "Videolar": [
+                    "<a href='https://www.youtube.com/watch?v=XXXXXXX'>Yerning aylanishi</a>",
+                    "<a href='https://www.youtube.com/watch?v=XXXXXXX'>Geografik koordinatalar</a>"
+                ]
+            },
+            "8": {
+                "Mavzulari": [
+                    "Atmosfera va Iqlim",
+                    "Yer qorong'u va Geologiya"
+                ],
+                "Xaritalar": [
+                    "<img src='images/climate_map.jpg' alt='Iqlim xaritasi' />"
+                ],
+                "Slaydlar": [
+                    "<a href='slides/atmosfera_va_iqlim.pdf'>Atmosfera va iqlim</a>",
+                    "<a href='slides/yer_qorongu_geologiya.pdf'>Yer qorong'u va geologiya</a>"
+                ],
+                "Videolar": [
+                    "<a href='https://www.youtube.com/watch?v=XXXXXXX'>Atmosfera tuzilishi</a>",
+                    "<a href='https://www.youtube.com/watch?v=XXXXXXX'>Yer qorong'u harakati</a>"
+                ]
+            },
+            "9": {
+                "Mavzulari": [
+                    "Biologik omillar va Ekosistemalar",
+                    "O'zgarmas harakatlar va o'sish"
+                ],
+                "Xaritalar": [
+                    "<img src='images/ecosystem_map.jpg' alt='Ekosistemalar xaritasi' />"
+                ],
+                "Slaydlar": [
+                    "<a href='slides/biologik_omillar.pdf'>Biologik omillar</a>",
+                    "<a href='slides/ozgarmas_harakatlar.pdf'>O'zgarmas harakatlar va o'sish</a>"
+                ],
+                "Videolar": [
+                    "<a href='https://www.youtube.com/watch?v=XXXXXXX'>Biologik omillar haqida</a>",
+                    "<a href='https://www.youtube.com/watch?v=XXXXXXX'>O'zgarmas harakatlar</a>"
+                ]
+            },
+            "10": {
+                "Mavzulari": [
+                    "Energetika va Ekologiya",
+                    "Resurslar va ixtisoslash"
+                ],
+                "Xaritalar": [
+                    "<img src='images/energy_ecology_map.jpg' alt='Energetika va ekologiya xaritasi' />"
+                ],
+                "Slaydlar": [
+                    "<a href='slides/energetika_va_ekologiya.pdf'>Energetika va ekologiya</a>",
+                    "<a href='slides/resurslar_ixtisoslash.pdf'>Resurslar va ixtisoslash</a>"
+                ],
+                "Videolar": [
+                    "<a href='https://www.youtube.com/watch?v=XXXXXXX'>Energetika tizimi</a>",
+                    "<a href='https://www.youtube.com/watch?v=XXXXXXX'>Ekologik muammolar</a>"
+                ]
+            },
+            // Add data for other grades as needed
+        };
+
+        if (data[sinf]) {
+            const categories = ["Mavzulari", "Slaydlar", "Xaritalar", "Videolar"];
+            
+            categories.forEach(category => {
+                if (data[sinf][category]) {
+                    const categoryTitle = document.createElement('h3');
+                    categoryTitle.textContent = category;
+                    content.appendChild(categoryTitle);
+                    
+                    data[sinf][category].forEach(item => {
+                        const listItem = document.createElement('div');
+                        listItem.innerHTML = item;
+                        content.appendChild(listItem);
+                    });
+                }
+            });
+        }
+    }
+});
